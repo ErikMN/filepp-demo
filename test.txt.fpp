@@ -18,3 +18,16 @@ __LINE__
 #foreach VALUE one, two, three, four, five
 VALUE
 #endforeach
+
+#ifdef USED_IN_FPP
+The EXAMPLE_ENV_VAR is set as an environment variable!
+#if "USED_IN_FPP" eq "y"
+The variable is set to y!
+#else
+The variable is set to USED_IN_FPP
+#endif
+#endif
+
+#if not defined USED_IN_FPP
+The EXAMPLE_ENV_VAR is NOT set as an environment variable!
+#endif
